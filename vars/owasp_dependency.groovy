@@ -1,5 +1,6 @@
-def call(){
-  dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'OWASP' 
-  # the name OWASP is come from the name you save while downloading dependency-check in jenkins system
-  dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+def call() {
+    // The name 'OWASP' here is the label you configured while setting up 
+    // the Dependency-Check tool in the Jenkins system.
+    dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'OWASP'
+    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
 }
